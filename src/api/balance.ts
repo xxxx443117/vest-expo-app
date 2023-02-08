@@ -15,11 +15,15 @@ export const wsClient = new WebsocketClient({
 }, logger);
 
 const marketSubscribes: WebSocket[] = [];
+const marketTrikerSubscribes: WebSocket[] = [];
 
 export const startMarkPrice = () => {
     markets.forEach(item => {
-        marketSubscribes.push(
-            wsClient.subscribeMarkPrice(`${item}USDT`, 'usdm')
+        // marketSubscribes.push(
+        //     wsClient.subscribeMarkPrice(`${item}USDT`, 'usdm')
+        // )
+        marketTrikerSubscribes.push(
+            wsClient.subscribeSymbol24hrTicker(`${item}USDT`, 'usdm')
         )
     })
 }
@@ -30,4 +34,12 @@ export const closeMarkPrice = () => {
         wsClient.closeWs(item)
     })
     marketSubscribes.splice(0, marketSubscribes.length)
+}
+
+export const closeMarkTriker = () => {
+    console.log('close ============ closeMarkTriker close')
+    marketTrikerSubscribes.forEach(item => {
+        wsClient.closeWs(item)
+    })
+    marketTrikerSubscribes.splice(0, marketTrikerSubscribes.length)
 }

@@ -6,7 +6,7 @@ export const markets = [
     'DOGE',
     'SOL',
     'MATIC',
-    'SHIB',
+    // 'SHIB',
     'LTC',
     'ADA',
     'DOT',

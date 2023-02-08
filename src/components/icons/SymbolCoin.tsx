@@ -42,6 +42,7 @@ const SymbolCoin: React.FC<SymbolCoinProps> = ({ symbol }) => {
             width: 20,
             height: 20,
         }}
+        alt={symbol}
         source={{ uri: coins[symbol] ||'' }}
     />
   )
