@@ -28,6 +28,11 @@ const Button: React.FC<ButtonProps> = ({
     "subtleBtnBg"
   );
 
+  const subtleBtnColor = useThemeColor(
+    { light: lightColor, dark: darkColor },
+    "subtleBtnColor"
+  );
+
   const outline = useThemeColor(
     { light: lightColor, dark: darkColor },
     "subText"
@@ -93,7 +98,7 @@ const Button: React.FC<ButtonProps> = ({
         style={[styles.subtle, { backgroundColor: subtleBtnBg }, style]}
       >
         {leftElement}
-        <Text allowFontScaling={false}>{otherProps.title}</Text>
+        <Text color={subtleBtnColor} allowFontScaling={false}>{otherProps.title}</Text>
         {rightElement}
       </TouchableOpacity>
     );
@@ -134,9 +139,9 @@ export default Button;
 
 const styles = StyleSheet.create({
   subtle: {
-    paddingVertical: 6,
-    paddingHorizontal: 16,
-    borderRadius: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 11,
+    borderRadius: 11,
     flexDirection: "row",
     alignItems: "center",
   },

@@ -48,8 +48,6 @@ export default function TabBarIcon({ name, active, ...props }: TabBarIconProps) 
   }, [active, name])
 
   return <Center height='100%' >
-    <Button style={{ height: '100%' }} variant='custom' {...props} title=''>
       <Image alt={name} style={{ width: 30, height: 30 }} source={source} />
-    </Button>
   </Center >
 }

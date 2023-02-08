@@ -33,6 +33,7 @@ const linking: LinkingOptions<RootStackParamList> = {
         },
       },
       Search: "Search",
+      Kline: "Kline",
       NotFound: "*",
     },
   },

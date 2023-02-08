@@ -12,9 +12,10 @@ const Search: React.FC<
   return (
     <VStack w="100%" space={5} alignSelf="center">
       <Input
-        placeholder="搜索"
+        placeholder="SHIBI"
         width="100%"
         paddingLeft={4}
+        borderRadius='full'
         InputRightElement={
           <Box marginRight={4}>
             <Button

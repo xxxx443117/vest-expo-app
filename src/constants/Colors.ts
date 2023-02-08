@@ -1,4 +1,4 @@
-const tintColorLight = "#2f95dc";
+const tintColorLight = "#2563EB";
 const tintColorDark = "#32BDCF";
 const priceColor = "#F1BE76";
 const primary = "#3D6AFB";
@@ -9,8 +9,9 @@ const redColor = "#f98364";
 const Colors = {
   light: {
     text: "#000",
-    background: "#fff",
-    backgroundCard: "#2D384B",
+    background: "#f4f8f9",
+    backgroundCard: "#fff",
+    tabbarBackgroundColor: "#eee",
     tint: tintColorLight,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorLight,
@@ -21,7 +22,8 @@ const Colors = {
     subText,
     heading: "#252525",
     border: "#B3B3B3",
-    subtleBtnBg: "#343C4E",
+    subtleBtnBg: "#EDF3FF",
+    subtleBtnColor: "#0878D2",
     priceColor,
     primary,
     likeColor,
@@ -31,6 +33,7 @@ const Colors = {
     text: "#fff",
     background: "#12182b",
     backgroundCard: "#2D384B",
+    tabbarBackgroundColor: "#eee",
     tint: tintColorDark,
     tabIconDefault: "#ccc",
     tabIconSelected: tintColorDark,
@@ -42,6 +45,7 @@ const Colors = {
     heading: "#fff",
     border: "#B3B3B3",
     subtleBtnBg: "#343C4E",
+    subtleBtnColor: "#0878D2",
     priceColor,
     primary,
     likeColor,

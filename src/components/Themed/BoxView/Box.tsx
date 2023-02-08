@@ -17,6 +17,7 @@ const Box: React.FC<BoxProps> = (props) => {
     { light: lightColor, dark: darkColor },
     _color as ColorsKey
   );
+
   const borderColor = useThemeColor(
     { light: lightColor, dark: darkColor },
     (_borderColor as ColorsKey) || "border"

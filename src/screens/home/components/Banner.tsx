@@ -4,15 +4,12 @@ import {
   StyleProp,
   ViewStyle,
 } from "react-native";
-import { Text, View, ScrollView, Button } from "@/components/Themed";
-import { Box, Center, Row, Image, Skeleton, Pressable } from "native-base";
+import { Text, View, ScrollView, Button, Box } from "@/components/Themed";
+import { Center, Row, Image, Skeleton, Pressable } from "native-base";
 import Carousel from "react-native-reanimated-carousel";
 import React from "react";
-import { ViewProps } from "@/components/Themed/types";
-import { Container } from "@/components/Themed/Layout";
 import Layout from "@/constants/Layout";
 import { useNavigation } from "@react-navigation/native";
-import { BannerType } from "~/types";
 import Breakpoints from "@/constants/Breakpoints";
 
 interface BannerImageProps {
@@ -21,28 +18,24 @@ interface BannerImageProps {
   index: number;
 }
 
+const banner1 = require('@/assets/images/home/banner1.png');
+const banner2 = require('@/assets/images/home/banner2.png');
+
 const BannerImage: React.FC<BannerImageProps> = ({ style, item, index }) => {
   const { navigate } = useNavigation();
 
   return (
-    <View style={[styles.container, style]}>
-      <Pressable
-        style={styles.image}
-        onPress={() => {
-          navigate("BannerDetail", {
-            index,
-            title: item.title,
-            type: BannerType.BANNER,
-          });
-        }}
-      >
-        <Image
+    <Box bgColor='backgroundCard' style={[styles.container, style]}>
+        <Pressable
           style={styles.image}
-          alt={item.title}
-          source={{ uri: item.resLink }}
-        />
-      </Pressable>
-    </View>
+        >
+          <Image
+            style={styles.image}
+            alt={item.title}
+            source={{ uri: item.resLink }}
+          />
+        </Pressable>
+    </Box>
   );
 };
 
@@ -54,35 +47,24 @@ const defaultProps = {
   height: 150,
 };
 
-const Banner = () => {
-    return (
-      <Carousel
-        {...defaultProps}
-        data={[1, 2, 3]}
-        renderItem={({ item }) => <Skeleton style={styles.image} />}
-      />
-    );
-  // useFetchBannderData();
-  // const { loaded, data } = useStore((p) => p.common.banner);
+const list: any[] = [{
+  title: 'banner1',
+  resLink: banner1,
+}, {
+  title: 'banner2',
+  resLink: banner2,
+}];
 
-  // if (!loaded || !data?.total) {
-  //   return (
-  //     <Carousel
-  //       {...defaultProps}
-  //       data={[1, 2, 3]}
-  //       renderItem={({ item }) => <Skeleton style={styles.image} />}
-  //     />
-  //   );
-  // }
-  // return (
-  //   <Carousel
-  //     {...defaultProps}
-  //     data={data?.list || []}
-  //     renderItem={({ item, index }) => (
-  //       <BannerImage item={item} index={index} />
-  //     )}
-  //   />
-  // );
+const Banner = () => {
+  return (
+    <Carousel
+      {...defaultProps}
+      data={list || []}
+      renderItem={({ item, index }) => (
+        <BannerImage item={item} index={index} />
+      )}
+    />
+  );
 };
 
 export default Banner;

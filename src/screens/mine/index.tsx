@@ -6,10 +6,7 @@ import { RootTabScreenProps } from '~/types';
 export default function MineScreen({ navigation }: RootTabScreenProps<'Mine'>) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This screen doesn't exist.</Text>
-      <TouchableOpacity onPress={() => navigation.replace('Root')} style={styles.link}>
-        <Text style={styles.linkText}>Go to home screen!</Text>
-      </TouchableOpacity>
+      <Text style={styles.title}>Mine</Text>
     </View>
   );
 }

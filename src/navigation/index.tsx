@@ -20,6 +20,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import NotFoundScreen from "@/screens/NotFoundScreen";
 
 import SearchScreens from "../screens/search";
+import KlineScreens from "../screens/kline";
 import SearchHeader from "../screens/search/components/Header";
 
 import HomeScreen from "../screens/home";
@@ -81,6 +82,18 @@ function RootNavigator() {
       />
       
       <Stack.Screen
+        name="Kline"
+        component={KlineScreens}
+        options={({ route, navigation }) => {
+          return {
+            header: () => (
+              null
+            ),
+          };
+        }}
+      />
+      
+      <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
@@ -102,10 +115,24 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].text,
+        tabBarActiveTintColor: Colors[colorScheme].tint,
         tabBarStyle: {
           width: "100%",
-          height: 70
+          height: 70,
+          borderTopWidth: 0,
+          backgroundColor: Colors[colorScheme].tabbarBackgroundColor,
+        },
+        tabBarIconStyle: {
+          margin: 0,
+          height: "auto",
+          padding: 0,
+        },
+        tabBarLabelStyle: {
+          marginBottom: 20 * 0.4,
+          // fontSize: 20 * 0.7,
+          // fontWeight: "bold",
+          // lineHeight: 20 * 1.33,
+          // color: '#0f0'
         },
       }}
     >

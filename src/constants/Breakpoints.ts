@@ -1,7 +1,7 @@
 import Layout from "./Layout";
 
 export default {
-  LayoutPaddingX: Layout.isSmallDevice ? 16 : 26,
+  LayoutPaddingX: 16,
   LayoutHeaderHeight: 70,
   LayoutBottomHeight: 78,
 };

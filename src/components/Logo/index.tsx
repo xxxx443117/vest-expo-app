@@ -1,10 +1,10 @@
 import { Image } from "native-base";
 import React from "react";
 
-const logo = require('@/assets/images/logo/logo3.png');
+const logo = require('@/assets/images/logo/logo.png');
 
-const rate = 0.6
+const rate = 1
 const Logo = () => {
-  return <Image alt="LOGO" style={{ marginLeft: -5 }} source={logo} width={194 * rate} height={52 * rate} />
+  return <Image alt="LOGO" style={{ marginLeft: -5 }} source={logo} width={31 * rate} height={31 * rate} />
 }
 export default Logo;
