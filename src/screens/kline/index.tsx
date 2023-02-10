@@ -10,7 +10,14 @@ import symbolInfo from '@/constants/symbol.json';
 import { Container } from "@/components/Themed/Layout";
 
 
-export default function Home({ navigation }: RootStackScreenProps<"Kline">) {
+export default function Kline({ navigation, route }: RootStackScreenProps<"Kline">) {
+
+  const { params } = route;
+
+  const { name, intro } = React.useMemo(() => {
+    return (symbolInfo as any)[params.symbol]
+  }, [params.symbol])
+
   return (
     <ScrollView style={styles.container}>
       <Box height={500}>
@@ -20,17 +27,15 @@ export default function Home({ navigation }: RootStackScreenProps<"Kline">) {
           }}
           contentWidth={Layout.window.width - Breakpoints.LayoutPaddingX * 2}
           source={{
-            // html: '<iframe  width="400" height="200" src="https://protected-domain.com/user/cart?embedded"/>',
-            // uri: './components/kline.html',
-            uri: 'https://s.tradingview.com/widgetembed/?theme=dark&symbol=BNBUSDT',
+            uri: `https://s.tradingview.com/widgetembed/?theme=dark&symbol=${params.symbol}`,
           }}
         />
       </Box>
       <Container marginBottom={3} >
-        <Heading>Acerca de Polygon (MATIC)</Heading>
+        <Heading>Acerca de {name} ({params.symbol})</Heading>
         <Box marginTop={2}>
           {
-            symbolInfo.BTC.intro.map((item, index) => {
+            intro.map((item: string, index: number) => {
               return <Text marginTop={2} key={index}>{item}</Text>
             })
           }

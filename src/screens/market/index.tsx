@@ -18,16 +18,28 @@ export default function Home({ navigation }: RootTabScreenProps<"Market">) {
   useSubscribeMarkPrice()
 
   const symbolList = useMarketList()
+  const [search, setSearch] = React.useState("");
+
+  const renderList = React.useMemo(() => {
+    return symbolList.filter(item => {
+      return item.symbol.toLowerCase().includes(search.toLowerCase());
+    })
+  }, [search, symbolList])
   
   return (
     <View style={styles.container}>
-      <Header />
+      <Header search={{
+        value: search,
+        onChangeText: (_text) => {
+          setSearch(_text);
+        }
+      }} />
       <ScrollView style={styles.container}>
         <Box mt="2">
           {
-            symbolList.map(item => {
+            renderList.map(item => {
               return <Pressable key={item.symbol} onPress={() => {
-                navigate('Kline')
+                navigate('Kline', { symbol: item.symbol })
               }}>
                 <SymbolChange  info={item} />
               </Pressable>

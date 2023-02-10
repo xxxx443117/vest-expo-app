@@ -24,7 +24,9 @@ export enum SearchType {
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
-  Kline: undefined,
+  Kline: {
+    symbol: string;
+  },
   Home: undefined;
   Download: undefined;
   Search: {

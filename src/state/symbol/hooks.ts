@@ -58,8 +58,6 @@ export const useMarketList = () => {
 
   return React.useMemo(() => {
 
-    console.log('4444444444444')
-
     const price: any = {
       ...marketMap,
     }

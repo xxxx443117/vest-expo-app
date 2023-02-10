@@ -29,7 +29,6 @@ export const startMarkPrice = () => {
 }
 
 export const closeMarkPrice = () => {
-    console.log('close ============ =========== close')
     marketSubscribes.forEach(item => {
         wsClient.closeWs(item)
     })
@@ -37,7 +36,6 @@ export const closeMarkPrice = () => {
 }
 
 export const closeMarkTriker = () => {
-    console.log('close ============ closeMarkTriker close')
     marketTrikerSubscribes.forEach(item => {
         wsClient.closeWs(item)
     })

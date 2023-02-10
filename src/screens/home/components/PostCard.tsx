@@ -43,9 +43,7 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
               <Text>{info.time}</Text>
             </Column>
           </Row>
-          <Button onPress={() => {
-            navigate('Kline')
-          }} title="关注"  variant="subtle" leftElement={
+          <Button title="关注"  variant="subtle" leftElement={
             <Image
               alt="icon"
                 style={{

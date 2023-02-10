@@ -2,7 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { Center, ChevronLeftIcon, Row } from "native-base";
 import React from "react";
 import { StyleSheet, Image } from "react-native";
-import { Heading, Text, View } from "../Themed";
+import { Heading, InputProps, Text, View } from "../Themed";
 import Box from "../Themed/BoxView/Box";
 import { BoxProps } from "../Themed/BoxView/type";
 import { Button } from "../Themed/Button";
@@ -16,21 +16,22 @@ const bell = require('@/assets/images/bell.png');
 interface HeaderProps extends BoxProps {
   title?: string;
   transparent?: boolean;
+  search?: InputProps,
 }
 const Header: React.FC<HeaderProps> = ({
   title,
   children,
   transparent,
+  search,
   ...props
 }) => {
-  const { goBack } = useNavigation();
   return (
     <Box bgColor={ transparent ? '' : 'background'  }>
       <Container  {...props}>
         <Row height={71} alignItems="center">
           <Logo />
           <Box marginLeft={5} flex={1}>
-            <Search />
+            <Search {...search} />
           </Box>
           <Row marginLeft={4}>
             <Box marginRight={3}>

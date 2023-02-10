@@ -22,8 +22,6 @@ export default function SearchHistory({
   const [showDel, setShowDel] = React.useState(false);
 
  
-  console.log(showEmpty)
-
   return (
     <Box>
       <Row alignItems="center" justifyContent="space-between">
