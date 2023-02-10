@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar, Row, Text, Image, Column } from "native-base";
 import { Box, Button, Heading } from "@/components/Themed";
 import { Container } from "@/components/Themed/Layout";
+import { useNavigation } from "@react-navigation/native";
 
 const follow = require('@/assets/images/home/follow.png');
 const comment = require('@/assets/images/home/comment.png');
@@ -25,6 +26,7 @@ interface PostCard {
 
 
 const PostCard: React.FC<PostCard> = ({ info }) => {
+  const { navigate } = useNavigation();
 
   return (
     <Box bgColor='backgroundCard' paddingY={2} mb={2} width="100%">
@@ -41,14 +43,17 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
               <Text>{info.time}</Text>
             </Column>
           </Row>
-          <Button title="关注"  variant="subtle" leftElement={
+          <Button onPress={() => {
+            navigate('Kline')
+          }} title="关注"  variant="subtle" leftElement={
             <Image
+              alt="icon"
                 style={{
                   width: 8,
                   height: 8,
                   marginRight: 2,
                 }}
-                source={{ uri: follow }}
+                source={follow}
               />
           } />
         </Row>
@@ -59,34 +64,37 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
         <Row>
           <Row flex={1} alignItems='center'>
             <Image
+              alt="icon"
               style={{
                 width: 15,
                 height: 15,
                 marginRight: 4
               }}
-              source={{ uri: comment }}
+              source={comment}
             />
             <Text>{info.comment}</Text>
           </Row>
           <Row flex={1} alignItems='center'>
             <Image
+              alt="icon"
               style={{
                 width: 15,
                 height: 15,
                 marginRight: 4
               }}
-              source={{ uri: like }}
+              source={like}
             />
             <Text>{info.liked}</Text>
           </Row>
           <Row flex={1} alignItems='center'>
             <Image
+              alt="icon"
               style={{
                 width: 15,
                 height: 15,
                 marginRight: 4
               }}
-              source={{ uri: share }}
+              source={share}
             />
             <Text>分享</Text>
           </Row>

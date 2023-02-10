@@ -24,11 +24,7 @@ const BackHeader: React.FC<BackHeaderProps> = ({
       <Container {...props}>
         <Row height={71} alignItems="center">
           <Button onPress={goBack} variant="custom" title="">
-            <Box bgColor='backgroundCard' width={35} style={styles.btn} height={35} borderRadius={10}>
-              <Center height="100%">
-                <ChevronLeftIcon />
-              </Center>
-            </Box>
+              <ChevronLeftIcon />
           </Button>
           <Row flex={1}>
             {Boolean(title) && <Heading  numberOfLines={1} ellipsizeMode='tail' ml={19}>{title}</Heading>}

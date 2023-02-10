@@ -26,6 +26,7 @@ export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Kline: undefined,
   Home: undefined;
+  Download: undefined;
   Search: {
     type: SearchType;
     k?: string;

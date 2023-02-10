@@ -1,6 +1,6 @@
 
 import { markets } from '@/constants/Symbol';
-import { MainClient, WebsocketClient, DefaultLogger } from 'binance';
+import { MainClient, WebsocketClient, DefaultLogger } from '../lib/balance/lib/index';
 import WebSocket from 'isomorphic-ws';
 
 const logger = {

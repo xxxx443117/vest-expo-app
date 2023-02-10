@@ -1,0 +1,28 @@
+{
+    "BTC": {
+        "name": "Bitcoin",
+        "intro": [
+            "Bitcoin es una de las criptomonedas más populares del mercado. Desde que Satoshi Nakamoto la presentó por primera vez en 2009, ha mantenido el primer puesto en el mercado de las criptomonedas según su capitalización de mercado. Bitcoin allanó el camino para muchas altcoins que ya existían en el mercado y marcó un antes y un después en las soluciones de pago digital.  ",
+            "Como la primera criptomoneda del mundo, Bitcoin ha recorrido un largo camino en términos de valor. Sin embargo, no es necesario comprar un bitcoin entero, ya que los bitcoins se pueden dividir en unidades pequeñas llamadas «satoshis» en honor a su creador. Un satoshi equivale a 0,00000001 bitcoin.            ",
+            "No hay un token físico de BTC, por lo que se puede considerar dinero digital. Las transacciones de Bitcoin son totalmente transparentes y no se pueden censurar. Puedes enviar dinero a cualquier persona del mundo fácilmente. Es un sistema financiero respaldado por miles de ordenadores, conocidos como «nodos», en todo el mundo, en lugar de un solo banco central o gobierno. De ahí el término «descentralización».             "
+        ]
+    },
+    "ETH": {
+        "name": "Ethereum",
+        "intro": [
+            "Ethereum (ETH) es el segundo token de criptomoneda más grande en términos de capitalización de mercado. Esto se debe a que ha aportado mucha innovación y usos dentro del sector al introducir la función de los contratos inteligentes, que ha allanado el camino para el sector de las finanzas descentralizadas (DeFi) y las aplicaciones descentralizadas o Dapps.",
+            "Ethereum permite que los usuarios construyan y utilicen softwares, por lo general en forma de aplicaciones descentralizadas, que luego impulsa una red global distribuida de ordenadores ejecutando Ethereum. La red Ethereum es descentralizada, por lo que es muy resistente a cualquier forma de censura o inactividad.    ",
+            "Además, Ethereum es una plataforma de cadenas de bloques de código abierto que funciona con el uso de su moneda nativa, llamada Ether o ETH. Todas las comisiones de las transacciones o comisiones de gas de la red se pagan en ETH.             ",
+            "Ethereum o ETH es un token que utiliza específicamente la cadena de bloques de Ethereum para pagar las transacciones. Este token es el responsable de alimentar casi todo lo que ocurre dentro de la red.             ",
+            "Cualquier persona puede utilizar la red Ethereum para crear y ejecutar contratos inteligentes, que son programas informáticos que se ejecutan de forma autónoma, sin intervención del usuario. El crecimiento de Ethereum se puede atribuir en parte a su capacidad de funcionar con contratos inteligentes, lo que ha favorecido un ecosistema creciente de aplicaciones descentralizadas, tokens no fungibles (NFT) y más. ",
+            "Por defecto, Ethereum utiliza el mecanismo de consenso de prueba de trabajo (PoW), pero la red está migrando poco a poco a una prueba de participación (PoS) como parte de su actualización a Ethereum 2.0.  La actualización a Ethereum 2.0 comenzó en diciembre de 2020 con el lanzamiento de Beacon Chain. La comunidad de ETH apoyó esta actualización haciendo stake de 1 millón de ETH solo en la primera semana.             "
+        ]
+    },
+    "MATIC": {
+        "name": "Polygon",
+        "intro": [
+            
+        ]
+    }
+
+}

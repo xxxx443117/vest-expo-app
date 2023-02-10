@@ -2,14 +2,14 @@ import { StyleSheet } from "react-native";
 import { WebView } from 'react-native-webview';
 import { View, ScrollView, Text, Box, Heading } from "@/components/Themed";
 import RenderHTML from "react-native-render-html";
-import { RootTabScreenProps } from "~/types";
+import { RootStackScreenProps } from "~/types";
 import React from "react";
 import Layout from "@/constants/Layout";
 import { Image } from 'native-base';
 
 const mine = require('@/assets/images/mine.png');
 
-export default function MineScreen({ navigation }: RootTabScreenProps<'Mine'>) {
+export default function Download({ navigation }: RootStackScreenProps<"Download">) {
   return (
     <ScrollView style={styles.container}>
       <Image

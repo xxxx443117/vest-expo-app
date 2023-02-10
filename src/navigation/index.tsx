@@ -4,16 +4,16 @@
  *
  */
 
-import { FontAwesome } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
+  useNavigation,
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
-import { ColorSchemeName } from "react-native";
+import { ColorSchemeName, Pressable } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -22,6 +22,8 @@ import NotFoundScreen from "@/screens/NotFoundScreen";
 import SearchScreens from "../screens/search";
 import KlineScreens from "../screens/kline";
 import SearchHeader from "../screens/search/components/Header";
+
+import DownloadScreens from "../screens/download";
 
 import HomeScreen from "../screens/home";
 
@@ -37,6 +39,7 @@ import {
 
 import LinkingConfiguration from "./LinkingConfiguration";
 import TabBarIcon from "@/components/TabBar/TabBarIcon";
+import BackHeader from "@/components/BackHeader";
 
 export default function Navigation({
   colorScheme,
@@ -87,7 +90,18 @@ function RootNavigator() {
         options={({ route, navigation }) => {
           return {
             header: () => (
-              null
+              <BackHeader />
+            ),
+          };
+        }}
+      />
+      <Stack.Screen
+        name="Download"
+        component={DownloadScreens}
+        options={({ route, navigation }) => {
+          return {
+            header: () => (
+              <BackHeader />
             ),
           };
         }}
@@ -110,6 +124,7 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  const { navigate } = useNavigation();
 
   return (
     <BottomTab.Navigator
@@ -165,13 +180,13 @@ function BottomTabNavigator() {
       <BottomTab.Screen
         name="Mine"
         component={MineScreen}
-        options={{
+        options={() => ({
           title: "Mine",
           header: () => null,
           tabBarIcon: ({ focused }) => (
-            <TabBarIcon active={focused} name='home' title="Home" />
+              <TabBarIcon active={focused} name='mine' title="Mine" />
           ),
-        }}
+        })}
       />
     </BottomTab.Navigator>
   );

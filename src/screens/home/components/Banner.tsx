@@ -22,20 +22,19 @@ const banner1 = require('@/assets/images/home/banner1.png');
 const banner2 = require('@/assets/images/home/banner2.png');
 
 const BannerImage: React.FC<BannerImageProps> = ({ style, item, index }) => {
-  const { navigate } = useNavigation();
 
   return (
-    <Box bgColor='backgroundCard' style={[styles.container, style]}>
+    <Center bgColor='backgroundCard' style={[styles.container, style]}>
         <Pressable
           style={styles.image}
         >
           <Image
             style={styles.image}
             alt={item.title}
-            source={{ uri: item.resLink }}
+            source={item.resLink}
           />
         </Pressable>
-    </Box>
+    </Center>
   );
 };
 
@@ -44,7 +43,7 @@ const defaultProps = {
   autoPlay: true,
   pagingEnabled: true,
   autoPlayInterval: 3000,
-  height: 150,
+  height: Layout.window.width / 1044 * 578,
 };
 
 const list: any[] = [{
@@ -60,7 +59,7 @@ const Banner = () => {
     <Carousel
       {...defaultProps}
       data={list || []}
-      renderItem={({ item, index }) => (
+      renderItem={({ item, index }: any) => (
         <BannerImage item={item} index={index} />
       )}
     />
@@ -72,26 +71,13 @@ export default Banner;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 8,
     overflow: "hidden",
     width: "100%",
     height: "100%",
-    position: "relative",
-  },
-  btn: {
-    position: "absolute",
-    top: 0,
-    bottom: 0,
-    borderRadius: 8,
   },
   image: {
-    position: "absolute",
-    top: 0,
-    left: Breakpoints.LayoutPaddingX / 2,
-    bottom: 0,
-    right: Breakpoints.LayoutPaddingX / 2,
-    borderRadius: 8,
+    borderRadius: 2,
+    height: Layout.window.width / 1044 * 578 - Breakpoints.LayoutPaddingX * 2,
+    width: Layout.window.width - Breakpoints.LayoutPaddingX * 2
   },
 });

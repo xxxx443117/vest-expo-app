@@ -9,6 +9,7 @@ import useCachedResources from "./src/hooks/useCachedResources";
 import useColorScheme from "./src/hooks/useColorScheme";
 import { useExtendBaseTheme } from "./src/hooks/useExtendBaseTheme";
 import Navigation from "./src/navigation";
+import { Text } from "@/components/Themed";
 
 
 export default function App() {
@@ -28,7 +29,7 @@ export default function App() {
           <StatusBar
             translucent={false}
             backgroundColor="transparent"
-            style="light"
+            style="dark"
           />
           <SafeAreaView
             mode="padding"
@@ -37,7 +38,7 @@ export default function App() {
             <NativeBaseProvider
               theme={theme}
             >
-                <Navigation colorScheme={colorScheme} />
+              <Navigation colorScheme={colorScheme} />
 
               {/* {Platform.OS !== "web" && <VConsole />} */}
             </NativeBaseProvider>

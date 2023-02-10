@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "vest-expo-app",
+    "scheme": "myapp",
     "slug": "vest-expo-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,10 +25,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.yigelonggege.vestexpoapp"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "029358c6-d503-4de0-b3e6-640dc5a4efe0"
+      }
     }
   }
 }

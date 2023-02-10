@@ -3,7 +3,7 @@ import { View, ScrollView } from "@/components/Themed";
 import { Box } from "native-base";
 import { RootTabScreenProps } from "~/types";
 import React from "react";
-import Banner from "./components/Banner";
+// import Banner from "./components/Banner";
 import Header from '@/components/Header';
 import PostCard from "./components/PostCard";
 
@@ -38,7 +38,7 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
       <Header />
       <ScrollView style={styles.container}>
         <Box>
-          <Banner />
+          {/* <Banner /> */}
         </Box>
         <Box mt="2">
           {
