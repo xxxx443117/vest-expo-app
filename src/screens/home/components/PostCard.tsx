@@ -4,6 +4,7 @@ import { Box, Button, Heading, Text } from "@/components/Themed";
 import { Container } from "@/components/Themed/Layout";
 import { useNavigation } from "@react-navigation/native";
 import { ContentDetail } from "@/api/request";
+import Markdown from 'react-native-markdown-renderer';
 import dayjs from "dayjs";
 import { shortenAddress } from "@/utils/address";
 
@@ -64,7 +65,8 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
           <Box>
             <Box paddingY={3}>
               <Heading marginBottom={1}>{info.title}</Heading>
-              <Text>{info.body}</Text>
+              {/* <Text>{info.body}</Text> */}
+              <Markdown>{info.body}</Markdown>
             </Box>
             <Box>
               <Text  color='subText' fontSize={10} >{dayjs(info.timestamp*1000).format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]')}</Text>

@@ -37,11 +37,11 @@ export default function Detail({ navigation, route }: RootStackScreenProps<"Deta
     }, [fetchHandle])
 
     return (
-        <Box>
+        <ScrollView>
             {content && <PostCard info={content} />}
             {loading && <Spinner />}
             {!loading && !content && <Empty />}
-        </Box>
+        </ScrollView>
     );
 };
   
