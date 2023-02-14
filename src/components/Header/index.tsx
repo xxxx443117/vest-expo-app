@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
           <Box marginLeft={5} flex={1}>
             <Search {...search} />
           </Box>
-          <Row marginLeft={4}>
+          {/* <Row marginLeft={4}>
             <Box marginRight={3}>
               <Button  title={""} variant="custom" >
                 <Image style={{ width: 19, height: 19 }} source={add} />
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
             <Button title={""} variant="custom" >
               <Image style={{ width: 20, height: 21 }} source={bell} />
             </Button>
-          </Row>
+          </Row> */}
         </Row>
       </Container>
     </Box>

@@ -1,8 +1,11 @@
 import React from "react";
-import { Avatar, Row, Text, Image, Column } from "native-base";
-import { Box, Button, Heading } from "@/components/Themed";
+import { Avatar, Row, Image, Column, Pressable } from "native-base";
+import { Box, Button, Heading, Text } from "@/components/Themed";
 import { Container } from "@/components/Themed/Layout";
 import { useNavigation } from "@react-navigation/native";
+import { ContentDetail } from "@/api/request";
+import dayjs from "dayjs";
+import { shortenAddress } from "@/utils/address";
 
 const follow = require('@/assets/images/home/follow.png');
 const comment = require('@/assets/images/home/comment.png');
@@ -21,7 +24,7 @@ interface PostInfo {
 }
 
 interface PostCard {
-  info: PostInfo
+  info: ContentDetail
 }
 
 
@@ -34,16 +37,16 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
         <Row justifyContent="space-between" alignItems="center">
           <Row >
             <Avatar bg="green.500" source={{
-              uri: info.avatar
+              uri: info.publisher.Avatar
             }}>
-              {info.nickname}
+              {info.publisher.DisplayName}
             </Avatar>
             <Column marginLeft={2} justifyContent="center">
-              <Heading>{info.nickname}</Heading>
-              <Text>{info.time}</Text>
+              <Heading>{info.publisher.DisplayName}</Heading>
+              <Text color='subText' fontSize={10}>{shortenAddress(info.publisher.Address)}</Text>
             </Column>
           </Row>
-          <Button title="关注"  variant="subtle" leftElement={
+          {/* <Button title="关注"  variant="subtle" leftElement={
             <Image
               alt="icon"
                 style={{
@@ -53,13 +56,22 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
                 }}
                 source={follow}
               />
-          } />
+          } /> */}
         </Row>
-        <Box paddingY={3}>
-          <Heading marginBottom={1}>{info.title}</Heading>
-          <Text>{info.content}</Text>
-        </Box>
-        <Row>
+        <Pressable onPress={() => {
+          navigate('Detail', { id: `${info.id}` })
+        }}>
+          <Box>
+            <Box paddingY={3}>
+              <Heading marginBottom={1}>{info.title}</Heading>
+              <Text>{info.body}</Text>
+            </Box>
+            <Box>
+              <Text  color='subText' fontSize={10} >{dayjs(info.timestamp*1000).format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]')}</Text>
+            </Box>
+          </Box>
+        </Pressable>
+        {/* <Row>
           <Row flex={1} alignItems='center'>
             <Image
               alt="icon"
@@ -96,7 +108,7 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
             />
             <Text>分享</Text>
           </Row>
-        </Row>
+        </Row> */}
       </Container>
     </Box>
   );

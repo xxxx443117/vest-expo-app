@@ -24,6 +24,7 @@ import KlineScreens from "../screens/kline";
 import SearchHeader from "../screens/search/components/Header";
 
 import DownloadScreens from "../screens/download";
+import DetailScreens from "../screens/home/Detail";
 
 import HomeScreen from "../screens/home";
 
@@ -98,6 +99,18 @@ function RootNavigator() {
       <Stack.Screen
         name="Download"
         component={DownloadScreens}
+        options={({ route, navigation }) => {
+          return {
+            header: () => (
+              <BackHeader />
+            ),
+          };
+        }}
+      />
+
+      <Stack.Screen
+        name="Detail"
+        component={DetailScreens}
         options={({ route, navigation }) => {
           return {
             header: () => (

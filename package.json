@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@ethersproject/address": "^5.7.0",
     "@expo/webpack-config": "^0.17.2",
     "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-navigation/bottom-tabs": "^6.5.4",
@@ -18,8 +19,10 @@
     "babel-plugin-inline-import": "^3.0.0",
     "binance": "^2.3.4",
     "crypto": "^1.0.1",
+    "dayjs": "^1.11.7",
     "eas-cli": "^3.5.2",
     "expo": "~47.0.12",
+    "expo-cli": "^6.3.0",
     "expo-clipboard": "^4.0.1",
     "expo-linking": "^3.3.0",
     "expo-splash-screen": "^0.17.5",

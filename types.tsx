@@ -27,6 +27,9 @@ export type RootStackParamList = {
   Kline: {
     symbol: string;
   },
+  Detail: {
+    id: string;
+  },
   Home: undefined;
   Download: undefined;
   Search: {
