@@ -41,6 +41,7 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import TabBarIcon from "@/components/TabBar/TabBarIcon";
 import BackHeader from "@/components/BackHeader";
+import { Box } from "@/components/Themed";
 
 export default function Navigation({
   colorScheme,
@@ -143,6 +144,7 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Home"
       screenOptions={{
+        // tabBarBackground: () => <Box bgColor='tabbarBackgroundColor' />,
         tabBarActiveTintColor: Colors[colorScheme].tint,
         tabBarStyle: {
           width: "100%",

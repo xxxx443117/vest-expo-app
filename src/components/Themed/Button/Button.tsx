@@ -35,7 +35,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const outline = useThemeColor(
     { light: lightColor, dark: darkColor },
-    "subText"
+    "outline"
   );
 
   if (variant === variants.PRIMARY) {
@@ -113,12 +113,14 @@ const Button: React.FC<ButtonProps> = ({
         {...otherProps}
         style={[styles.outline, { borderColor: outline }, style]}
       >
+        {leftElement}
         {!otherProps.title ? null : (
-          <Text color={outline} allowFontScaling={false} {...textProps}>
+          <Text color={outline} allowFontScaling={false} style={[styles.outlineText, textProps?.style]} { ...textProps}>
             {otherProps.title}
           </Text>
         )}
         {otherProps?.children}
+        {rightElement}
       </TouchableOpacity>
     );
   }
@@ -149,5 +151,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 2,
     borderWidth: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: 'center'
+  },
+  outlineText: {
+    fontWeight: 'bold'
   },
 });

@@ -8,10 +8,11 @@ import SymbolChange from "./components/SymbolChange";
 import { wsClient, startMarkPrice, closeMarkPrice } from "@/api/balance";
 import { useNavigation } from "@react-navigation/native";
 import { markets } from "@/constants/Symbol";
-import { useMarketList, useSubscribeMarkPrice } from "@/state/symbol/hooks";
+import { useFetchUSD, useMarketList, useSubscribeMarkPrice } from "@/state/symbol/hooks";
 
 export default function Home({ navigation }: RootTabScreenProps<"Market">) {
 
+  useFetchUSD();
 
   const { navigate } = useNavigation();
 

@@ -78,6 +78,10 @@ export interface SymbolState {
   marketMapTriker: {
     [symbol: string]: TrikerUpdateData;
   },
+  usdDate: string,
+  rates: {
+    BRL: number;
+  }
 }
 
 export interface State {

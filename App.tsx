@@ -9,10 +9,10 @@ import useCachedResources from "./src/hooks/useCachedResources";
 import useColorScheme from "./src/hooks/useColorScheme";
 import { useExtendBaseTheme } from "./src/hooks/useExtendBaseTheme";
 import Navigation from "./src/navigation";
-import { Text } from "@/components/Themed";
 
 
 export default function App() {
+  
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 

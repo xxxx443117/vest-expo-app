@@ -4,6 +4,7 @@ import { Box, Button, Heading } from "@/components/Themed";
 import { Container } from "@/components/Themed/Layout";
 import SymbolCoin from "@/components/icons/SymbolCoin";
 import { PriceUpdate } from "@/state/types";
+import { useStore } from "@/state";
 
 const follow = require('@/assets/images/home/follow.png');
 const comment = require('@/assets/images/home/comment.png');
@@ -16,6 +17,10 @@ interface SymbolChange {
 
 
 const SymbolChange: React.FC<SymbolChange> = ({ info }) => {
+
+  const rates = useStore((p) => p.symbol.rates);
+
+  const rateBLR = rates.BRL || 1;
 
   return (
     <Box bgColor='backgroundCard' paddingY={2} width="100%">
@@ -34,7 +39,7 @@ const SymbolChange: React.FC<SymbolChange> = ({ info }) => {
           <Row alignItems="center">
             <Column marginRight={2} justifyContent="flex-end">
               <Text color='#212121' textAlign='right' fontWeight='bold' fontSize={13}>{info.currentClose}</Text>
-              <Text color='#8793A4' textAlign='right' fontSize={11}>$ {info.currentClose}</Text>
+              <Text color='#8793A4' textAlign='right' fontSize={11}>R$ {(info.currentClose * rateBLR).toFixed(2)}</Text>
             </Column>
             <ChangeBox change={info.priceChange} rate={info.priceChangePercent} />
           </Row>

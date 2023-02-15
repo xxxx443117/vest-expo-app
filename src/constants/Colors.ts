@@ -9,9 +9,10 @@ const redColor = "#f98364";
 const Colors = {
   light: {
     text: "#000",
+    outline: '#fff',
     background: "#f4f8f9",
     backgroundCard: "#fff",
-    tabbarBackgroundColor: "#eee",
+    tabbarBackgroundColor: "#fefefe",
     tint: tintColorLight,
     up: '#12B59A',
     down: '#F25E4F',
@@ -33,6 +34,7 @@ const Colors = {
   },
   dark: {
     text: "#fff",
+    outline: '#000',
     background: "#12182b",
     backgroundCard: "#2D384B",
     tabbarBackgroundColor: "#eee",

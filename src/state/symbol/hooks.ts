@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { PriceUpdate } from '@/state/types';
 import { closeMarkPrice, closeMarkTriker, startMarkPrice, wsClient } from "@/api/balance";
 import useDebounce from "@/hooks/useDebounce";
@@ -6,9 +7,9 @@ import { useCallback, useEffect } from "react";
 import throttle from 'lodash/throttle'
 import { useDispatch } from "react-redux";
 import { useStore } from "../util";
-import { symbolSetMarket, symbolSetMarketTriker } from "./action";
+import { symbolSetMarket, symbolSetMarketTriker, symbolSetRatesUSD } from "./action";
 import {
-  fetchUserInfoAsync,
+  fetchUserInfoAsync, initSymbolMap,
 } from "./reducer";
 
 // 获取用户信息 hook
@@ -58,9 +59,7 @@ export const useMarketList = () => {
 
   return React.useMemo(() => {
 
-    const price: any = {
-      ...marketMap,
-    }
+    const price: any = initSymbolMap();
     Object.keys(price).forEach(key => {
       price[key] = {
         ...marketMapTriker[key],
@@ -69,4 +68,31 @@ export const useMarketList = () => {
     })
     return Object.values(price) as PriceUpdate[];
   }, [marketMap, marketMapTriker])
+}
+
+const date = dayjs().format('YYYY-MM-DD');
+
+export const useFetchUSD = () => {
+
+  const dispatch = useDispatch();
+
+  const usdDate = useStore((p) => p.symbol.usdDate);
+
+  const fetchLatestUSD = React.useCallback(async () => {
+    const jsonRes = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+    const res = await jsonRes.json();
+    console.log(res);
+    if (res && res.rates && res.rates.BRL) {
+      dispatch(symbolSetRatesUSD({
+        date,
+        rates: res.rates,
+      }));
+    }
+  }, [])
+
+  React.useEffect(() => {
+    if (date !== usdDate) {
+      fetchLatestUSD();
+    }
+  }, [])
 }

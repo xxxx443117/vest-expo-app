@@ -81,7 +81,7 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
   return (
     <View style={styles.container}>
       <Header search={{
-        placeholder: '搜索帖子',
+        placeholder: 'Buscar publicaciones',
         value: search,
         onChangeText: (_text) => {
           setSearch(_text);

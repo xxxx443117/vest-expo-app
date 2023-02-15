@@ -8,7 +8,7 @@ const Empty = () => {
   return (
     <Box minH={200} maxH={500} height='100%' alignItems='center' justifyContent='center'>
       <Image width={88} height={102} alt='no-data' source={noData} />
-      <Text mt={2} color='subText'>暂无数据</Text>
+      <Text mt={2} color='subText'>No hay datos por el momento</Text>
     </Box>
   )
 }

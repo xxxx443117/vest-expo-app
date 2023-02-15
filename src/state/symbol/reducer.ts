@@ -3,9 +3,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createSlice } from "@reduxjs/toolkit";
 import { persistReducer } from "redux-persist";
 import { AppThunk, SymbolState } from "../types";
-import { symbolSetMarket, symbolSetMarketTriker, userSetSSID } from "./action";
+import { symbolSetMarket, symbolSetMarketTriker, symbolSetRatesUSD, userSetSSID } from "./action";
 
-const initSymbolMap = () => {
+export const initSymbolMap = () => {
   const symbolMap: any = {};
   markets.forEach(symbol => {
     symbolMap[symbol] = {
@@ -23,6 +23,10 @@ const initSymbolMap = () => {
 const initialState: SymbolState = {
   marketMap: {},
   marketMapTriker: {},
+  usdDate: '',
+  rates: {
+    BRL: 5.16,
+  }
 };
 
 // 获取用户信息 action
@@ -52,6 +56,7 @@ export const symbolStore = createSlice({
   extraReducers: (builder) => {
     builder.addCase(symbolSetMarket, (state, { payload }) => {
       const symbol = payload.symbol.split('USDT')[0];
+      console.log(symbol)
       state.marketMap[symbol] = {
         ...payload,
         symbol: symbol,
@@ -63,6 +68,12 @@ export const symbolStore = createSlice({
         ...payload,
         symbol: symbol,
       }
+    })
+    .addCase(symbolSetRatesUSD, (state, { payload }) => {
+      state.rates = {
+        ...payload.rates,
+      }
+      state.usdDate = payload.date;
     })
   }
 });
