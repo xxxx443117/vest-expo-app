@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "vest-expo-app",
-    "scheme": "myapp",
-    "slug": "vest-expo-app",
+    "name": "24-trade",
+    "scheme": "trade24",
+    "slug": "24-trade",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./src/assets/splash.png",
+      "image": "./src/assets/splash-light.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -26,14 +26,14 @@
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.yigelonggege.vestexpoapp"
+      "package": "com.daytrade.app22"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "029358c6-d503-4de0-b3e6-640dc5a4efe0"
+        "projectId": "ebf300da-4088-40c4-b9c6-32ecc34c7099"
       }
     }
   }
