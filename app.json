@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "24-trade",
-    "scheme": "trade24",
-    "slug": "24-trade",
+    "name": "24Reddit Notícias",
+    "scheme": "24Reddit Notícias",
+    "slug": "24Reddit Notícias",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -25,8 +25,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.daytrade.app22"
+      },      "package": "com.daytrade.app22"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"

@@ -33,7 +33,7 @@ export default function App() {
           />
           <SafeAreaView
             mode="padding"
-            style={{ flex: 1, backgroundColor: "#12182b" }}
+            style={{ flex: 1 }}
           >
             <NativeBaseProvider
               theme={theme}
