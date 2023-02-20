@@ -43,8 +43,11 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
               {info.publisher.DisplayName}
             </Avatar>
             <Column marginLeft={2} justifyContent="center">
-              <Heading>{info.publisher.DisplayName}</Heading>
-              <Text color='subText' fontSize={10}>{shortenAddress(info.publisher.Address)}</Text>
+              <Text>
+              {info.publisher.DisplayName}
+              </Text>
+              {/* <Heading>{info.publisher.DisplayName}</Heading> */}
+              {/* <Text color='subText' fontSize={10}>{shortenAddress(info.publisher.Address)}</Text> */}
             </Column>
           </Row>
           {/* <Button title="关注"  variant="subtle" leftElement={
@@ -63,13 +66,14 @@ const PostCard: React.FC<PostCard> = ({ info }) => {
           navigate('Detail', { id: `${info.id}` })
         }}>
           <Box>
-            <Box paddingY={3}>
-              <Heading marginBottom={1}>{info.title}</Heading>
+            <Box paddingTop={3} paddingBottom={1}>
+              <Heading >{info.title}</Heading>
               {/* <Text>{info.body}</Text> */}
+              {/* @ts-ignore */}
               <Markdown>{info.body}</Markdown>
             </Box>
             <Box>
-              <Text  color='subText' fontSize={10} >{dayjs(info.timestamp*1000).format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]')}</Text>
+              <Text  color='subText' fontSize={10} >{dayjs(info.timestamp*1000).format('YYYY-MM-DD HH:mm:ss')}</Text>
             </Box>
           </Box>
         </Pressable>

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { View, ScrollView, Button } from "@/components/Themed";
+import { View, ScrollView, Button, Text } from "@/components/Themed";
 import { Box, Spinner } from "native-base";
 import { RefreshControl } from "react-native";
 import { RootTabScreenProps } from "~/types";
@@ -11,6 +11,7 @@ import { getContentList } from "@/api/request";
 import Empty from "@/components/Empty";
 import { useNavigation } from "@react-navigation/native";
 import useDebounce from "@/hooks/useDebounce";
+import Fab from "./components/Fab";
 
 const pageSize = 20;
 
@@ -80,6 +81,10 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
 
   return (
     <View style={styles.container}>
+      <Fab />
+       {/* <Fab renderInPortal={false} shadow={2} placement="top-right"  size="4" icon={
+        <Text>点击赚钱</Text>
+      } /> */}
       <Header search={{
         placeholder: 'Buscar publicaciones',
         value: search,

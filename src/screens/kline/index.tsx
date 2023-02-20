@@ -27,11 +27,11 @@ export default function Kline({ navigation, route }: RootStackScreenProps<"Kline
           }}
           contentWidth={Layout.window.width - Breakpoints.LayoutPaddingX * 2}
           source={{
-            uri: `https://s.tradingview.com/widgetembed/?theme=dark&symbol=${params.symbol}`,
+            uri: `https://s.tradingview.com/widgetembed/?theme=light&symbol=${params.symbol}`,
           }}
         />
       </Box>
-      <Container marginBottom={3} >
+      <Container marginBottom={3} paddingTop={2}>
         <Heading>Acerca de {name} ({params.symbol})</Heading>
         <Box marginTop={2}>
           {

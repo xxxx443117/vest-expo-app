@@ -120,6 +120,18 @@ function RootNavigator() {
           };
         }}
       />
+
+      <Stack.Screen
+        name="Mine"
+        component={MineScreen}
+        options={({ route, navigation }) => {
+          return {
+            header: () => (
+              <BackHeader transparent />
+            ),
+          };
+        }}
+      />
       
       <Stack.Screen
         name="NotFound"
@@ -171,8 +183,8 @@ function BottomTabNavigator() {
         component={HomeScreen}
         options={{
           header: () => null,
-          title: "cHome",
-          tabBarLabel: 'Profile',
+          title: "Noticias",
+          tabBarLabel: 'Noticias',
           tabBarIcon: ({ focused }) => (
             <TabBarIcon active={focused} name='home' title="Home" />
           ),
@@ -183,16 +195,16 @@ function BottomTabNavigator() {
         name="Market"
         component={MarketScreen}
         options={{
-          title: "cMarket",
+          title: "Mercado",
           header: () => null,
-          tabBarLabel: 'Market',
+          tabBarLabel: 'Mercado',
           tabBarIcon: ({ focused }) => (
             <TabBarIcon active={focused} name='market' title="Market" />
           ),
         }}
       />
 
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Mine"
         component={MineScreen}
         options={() => ({
@@ -202,7 +214,7 @@ function BottomTabNavigator() {
               <TabBarIcon active={focused} name='mine' title="Mine" />
           ),
         })}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 }

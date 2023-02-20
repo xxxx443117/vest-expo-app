@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "24Reddit Notícias",
-    "scheme": "24Reddit Notícias",
-    "slug": "24Reddit Notícias",
+    "scheme": "reddit24",
+    "slug": "24Reddit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
@@ -25,14 +25,15 @@
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },      "package": "com.daytrade.app22"
+      },
+      "package": "com.daytrade.news01"
     },
     "web": {
       "favicon": "./src/assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "ebf300da-4088-40c4-b9c6-32ecc34c7099"
+        "projectId": "1fc08fa8-96f5-462b-a93c-49f91b68568a"
       }
     }
   }

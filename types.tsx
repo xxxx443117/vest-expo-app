@@ -38,6 +38,7 @@ export type RootStackParamList = {
   };
   NotFound: undefined;
   Mine: undefined;
+  About: undefined;
   Market: undefined;
 };
 
