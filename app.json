@@ -1,9 +1,10 @@
 {
   "expo": {
     "name": "24Reddit Notícias",
-    "scheme": "reddit24",
-    "slug": "24Reddit",
+    "scheme": "myapp",
+    "slug": "daytrade",
     "version": "1.0.0",
+    "runtimeVersion": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",
     "userInterfaceStyle": "light",
@@ -33,7 +34,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "1fc08fa8-96f5-462b-a93c-49f91b68568a"
+        "projectId": "e84f79ba-e38f-48e0-9d00-e63209554fa2"
       }
     }
   }

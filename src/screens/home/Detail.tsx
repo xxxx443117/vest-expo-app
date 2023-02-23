@@ -6,7 +6,6 @@ import {
   } from "react-native";
   import { Text, View, ScrollView, Button, Box, Spinner } from "@/components/Themed";
   import { Center, Row, Image, Skeleton, Pressable } from "native-base";
-  import Carousel from "react-native-reanimated-carousel";
   import React from "react";
 import { RootStackScreenProps } from "~/types";
 import Layout from "@/constants/Layout";

@@ -1,3 +1,4 @@
+import 'expo-dev-client';
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from 'react-native';
 import { NativeBaseProvider, extendTheme, Box } from "native-base";

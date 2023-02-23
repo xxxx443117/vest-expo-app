@@ -4,7 +4,6 @@ import { Box, Spinner } from "native-base";
 import { RefreshControl } from "react-native";
 import { RootTabScreenProps } from "~/types";
 import React from "react";
-// import Banner from "./components/Banner";
 import Header from '@/components/Header';
 import PostCard from "./components/PostCard";
 import { getContentList } from "@/api/request";
@@ -59,6 +58,9 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
     fetchHandle()
   }, [fetchHandle])
 
+  const [fristShow, setFristShow] = React.useState(false);
+  const [show, setShow] = React.useState(false);
+
   const onContentViewScroll = React.useCallback(
     (e: any) => {
       if (loadEnd) return;
@@ -66,12 +68,16 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
       if (loading) return;
       var offsetY = e.nativeEvent.contentOffset.y; // 已经滚动的距离
       var oriageScrollHeight = e.nativeEvent.layoutMeasurement.height; // 可滚动的可见区域高度
+      if (offsetY >= oriageScrollHeight && !fristShow) {
+        setShow(true);
+        setFristShow(true);
+      }
       var contentSizeHeight = Math.round(e.nativeEvent.contentSize.height); // 可滚动的总高度
       if (Math.round(offsetY + oriageScrollHeight) >= contentSizeHeight - 50) {
         setPage(p => p+1)
       }
     },
-    [loadEnd, loading, refreshing, setPage]
+    [loadEnd, loading, refreshing, setPage, fristShow, ]
   );
 
   const onRefresh = React.useCallback(() => {
@@ -81,7 +87,7 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
 
   return (
     <View style={styles.container}>
-      <Fab />
+      <Fab show={show} setShow={setShow} />
        {/* <Fab renderInPortal={false} shadow={2} placement="top-right"  size="4" icon={
         <Text>点击赚钱</Text>
       } /> */}
@@ -100,9 +106,6 @@ export default function Home({ navigation }: RootTabScreenProps<"Home">) {
         }
         onScroll={onContentViewScroll}
       >
-        <Box>
-          {/* <Banner /> */}
-        </Box>
         <Box mt="2">
           {
             contentList.map(item => {
